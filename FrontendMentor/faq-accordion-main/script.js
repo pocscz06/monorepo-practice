@@ -1,6 +1,7 @@
-const expandBtns = document.querySelectorAll('.expand-icon');
+const expandBtns = document.querySelectorAll('.question-container');
 const minusIcon = './assets/images/icon-minus.svg';
 const plusIcon = './assets/images/icon-plus.svg';
+
 
 expandBtns.forEach((expandBtn) => {
     expandBtn.addEventListener('click', () => {
@@ -13,14 +14,16 @@ expandBtns.forEach((expandBtn) => {
         //     }
         // })
         const answer = document.querySelector(`.answer[data-id="${btnDataId}"]`);
+        const img = document.querySelector(`.expand-icon[data-id="${btnDataId}"]`);
+        console.log(img);
 
         if (answer) {
             answer.classList.toggle('hide');
 
             if (answer.classList.contains('hide')) {
-                expandBtn.src = plusIcon;
+                img.src = plusIcon;
             } else {
-                expandBtn.src = minusIcon;
+                img.src = minusIcon;
             }
         }
     });
