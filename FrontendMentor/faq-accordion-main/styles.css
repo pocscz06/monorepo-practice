@@ -12,6 +12,14 @@
     font-weight: 400 700;
 }
 
+/* I can define repeated values as variables in root
+root: {
+    --primary-color: hsl(292, 42%, 14%);
+    --backgound-color: hsl(275, 100%, 97%);
+    --text-color: #999999;
+}
+*/
+
 * {
     box-sizing: border-box;
     /* Without border-box box-sizing,
@@ -33,12 +41,20 @@ body {
 }
 
 .faq-container {
+    display: flex;
     flex-direction: column;
-    width: 40%;
     background-color: white;
     border-radius: 15px;
     margin: 8em auto;
-
+    max-height: fit-content;
+    /* max-height of fit-content overrides the body's
+    min-height of 100vh, making it so the container
+    adapts to the overall size of what "shows"
+    
+    If max-content was used instead, it wouldn't "adapt"
+    and would just make the height of the container 
+    as though the accordion isn't "hiding" the expansion
+    element */
 }
 
 .hide {
@@ -59,10 +75,13 @@ body {
 
 .qa {
     padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .question-container {
     display: flex;
+    justify-content: space-between;
     position: relative;
 }
 
@@ -78,14 +97,15 @@ body {
 .expand-icon {
     width: 25px;
     height: 25px;
-    position: absolute;
-    right: 0;
-    top: 1rem;
+    align-self: center;
 }
 
 .qa-section {
     border-bottom: 1px solid #e8e8e8;
     padding: 0.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .qa-section:first-child {
@@ -102,3 +122,15 @@ body {
     width: 100%;
 }
 
+/* Media Queries */
+@media(min-width: 400px) {
+    .faq-container {
+        width: 60%;
+    }
+}
+
+@media(min-width: 769px) {
+    .faq-container {
+        width: 30%;
+    }
+}
