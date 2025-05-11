@@ -1,0 +1,104 @@
+@font-face {
+    font-family: "Work Sans";
+    src: url('./assets/fonts/WorkSans-VariableFont_wght.ttf') format('woff2-variations');
+    font-style: normal;
+    font-weight: 400 700;
+}
+
+@font-face {
+    font-family: "Work Sans";
+    src: url('./assets/fonts/WorkSans-Italic-VariableFont_wght.ttf') format('woff2-variations');
+    font-style: italic;
+    font-weight: 400 700;
+}
+
+* {
+    box-sizing: border-box;
+    /* Without border-box box-sizing,
+    padding and borders add to element
+    width/height */
+}
+
+body {
+    font-family: "Work Sans";
+    background-color: hsl(275, 100%, 97%);
+    background-image: url('./assets/images/background-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    /* min-height ensures it's AT LEAST full viewport */
+    margin: 0;
+}
+
+.faq-container {
+    flex-direction: column;
+    width: 40%;
+    background-color: white;
+    border-radius: 15px;
+    margin: 8em auto;
+
+}
+
+.hide {
+    display: none;
+    transition: all ease-in-out 1000ms;
+}
+
+#star {
+    width: 30px;
+    height: 30px;
+    margin: 0 1.3rem;
+}
+
+.header {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.qa {
+    padding: 0 1.5rem;
+}
+
+.question-container {
+    display: flex;
+    position: relative;
+}
+
+.question {
+    font-weight: 600;
+    color: hsl(292, 42%, 14%);
+}
+
+.answer {
+    color: #999999;
+}
+
+.expand-icon {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 0;
+    top: 1rem;
+}
+
+.qa-section {
+    border-bottom: 1px solid #e8e8e8;
+    padding: 0.5rem;
+}
+
+.qa-section:first-child {
+    padding-top: 0;
+}
+
+.qa-section:last-child {
+    border-bottom: none;
+}
+
+.attribution {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
