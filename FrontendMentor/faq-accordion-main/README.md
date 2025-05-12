@@ -108,3 +108,5 @@ __CSS__:
     - If you do not do this, the position of absolute you set will only look "correct" on the resolution you were testing it on. Once you start changing up the screen size to test responsiveness, it's not going to work as intended.
 - A `position: sticky;` element will never escape its "content box." (parent container)
     - If that element is filling the height of its container (default behavior is to stretch), even though its actual content doesn't, it's not going to behave properly. Look at it in DevTools if this is the case.
+> [NOTE]
+> ALWAYS work __with__ the natural flow of HTML. Use flexbox only when necessary. I removed display: flex from almost every component of my faq-container (including the faq-container) itself, and... it still functions the exact same as before.
