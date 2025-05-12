@@ -1,0 +1,95 @@
+/* For defining variables */
+:root {
+/* Colors */
+    --neutral0: hsl(0, 0%, 100%);
+    --neutral300: hsl(252, 6%, 83%);
+    --neutral500: hsl(245, 15%, 58%);
+    --neutral700: hsl(245, 19%, 35%);
+    --neutral900: hsl(248, 70%, 10%);
+    --orange500: hsl(7, 88%, 67%); 
+    --orange700: hsl(7, 71%, 60%);
+    --textgradient-start: hsl(7, 86%, 67%);
+    --textgradient-end: hsl(0, 0%, 100%);
+}
+
+/* Defining fonts */
+@font-face {
+    font-family: "Inconsolata";
+    src: url('./assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf') format('woff2-variations');
+    font-style: normal;
+    font-weight: 200 800;
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inconsolata", sans-serif;
+    margin: 0;
+    background-image: url('./assets/images/background-desktop.png');
+    color: var(--neutral0);
+}
+
+.gradient {
+    color: linear-gradient(var(--textgradient-start), var(--textgradient-end));
+}
+
+/* Container for entire form including header */
+.conf-form {
+
+}
+
+.conf-form h1 {
+
+}
+
+.conf-form p {
+
+}
+
+/* Container for 'Upload Avatar' */
+.upload-avatar {
+
+}
+
+.upload-avatar input {
+
+}
+
+.upload-avatar p {
+
+}
+
+/* Container for Full Name */
+.full-name {
+
+}
+
+/* Container for Email Address */
+.email-address {
+
+}
+
+/* Container for GitHub Username */
+.github-user {
+
+}
+
+.btn {
+
+}
+
+.btn:hover {
+    
+}
+
+.attribution {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 0 auto;
+}

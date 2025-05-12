@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="styles.css"/>
+
   <title>Frontend Mentor | Conference ticket generator</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -16,42 +17,57 @@
 </head>
 <body>
 
-  <!-- Form starts -->
-
-  Your Journey to Coding Conf 2025 Starts Here!
-
-  Secure your spot at next year's biggest coding conference.
-
-  Upload Avatar
-  Drag and drop or click to upload
-  Upload your photo (JPG or PNG, max size: 500KB).
-
-  Full Name
-
-  Email Address
-  example@email.com
-
-  GitHub Username
-  @yourusername
-
-  Generate My Ticket
-
-  <!-- Form ends -->
-
-  <!-- Generated tickets starts -->
-
-  Congrats, <!-- Full Name -->! Your ticket is ready.
-
-  We've emailed your ticket to <!-- Email Address --> and will send updates in the run up to the event.
-
-  Coding Conf
-  Jan 31, 2025 / Austin, TX
-
-  <!-- Generated tickets ends -->
+  <main>
+    <!-- Form starts -->
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    <form class="conf-form">
+      <h1 class="header">Your Journey to Coding Conf 2025 Starts Here!</h1>
+    
+      <p class="sub-header">Secure your spot at next year's biggest coding conference.</p>
+    
+      <section class="upload-avatar">
+        <label for="avatar">Upload Avatar</label>
+        <input type="file" accept="image/*" name="avatar" id="upload" required/>Drag and drop or click to upload
+        <p>Upload your photo (JPG or PNG, max size: 500KB).</p>
+      </section>
+    
+      <section class="full-name">
+        <label for="fullname">Full Name</label>
+        <input type="text" name="fullname" id="full-name" class="input" required/>
+      </section>
+    
+      <section class="email-address">
+        <label for="email">Email Address</label>
+        <input type="email" name="email" id="email-address" class="input" placeholder="example@email.com" required/>
+      </section>
+    
+      <section class="github-user">
+        <label for="github-username">GitHub Username</label>
+        <input type="text" name="github-username" id="gh-user" class="input" placeholder="@yourusername" required/>
+      </section>
+    
+      <button class="generate-ticket btn">Generate My Ticket</button>
+    </form>
+  
+    <!-- Form ends -->
+  
+    <!-- Generated tickets starts -->
+  
+    <div class="return" style="display: none">
+      Congrats, <!-- Full Name -->! Your ticket is ready.
+    
+      We've emailed your ticket to <!-- Email Address --> and will send updates in the run up to the event.
+    
+      Coding Conf
+      Jan 31, 2025 / Austin, TX
+    </div>
+  
+    <!-- Generated tickets ends -->
+    
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+      Coded by <a href="#">Kenny Pham</a>.
+    </div>
+  </main>
 </body>
 </html>
