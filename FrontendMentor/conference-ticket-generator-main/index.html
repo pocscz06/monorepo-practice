@@ -18,35 +18,46 @@
 <body>
 
   <main>
+    <img src="./assets/images/logo-full.svg" id="event-name" alt="Logo with event name--coding conf"/>
     <!-- Form starts -->
-  
     <form class="conf-form">
-      <h1 class="header">Your Journey to Coding Conf 2025 Starts Here!</h1>
-    
-      <p class="sub-header">Secure your spot at next year's biggest coding conference.</p>
+      <section class="header">
+        <h1 class="main-header">Your Journey to Coding Conf 2025 Starts Here!</h1>
+      
+        <p class="sub-header">Secure your spot at next year's biggest coding conference.</p>
+      </section>
     
       <section class="upload-avatar">
-        <label for="avatar">Upload Avatar</label>
-        <input type="file" accept="image/*" name="avatar" id="upload" required/>Drag and drop or click to upload
-        <p>Upload your photo (JPG or PNG, max size: 500KB).</p>
+        <label for="upload">Upload Avatar</label>
+
+        <input type="file" id="upload" style="display: none" required/>
+        
+        <section class="drop-zone">
+          <img src="./assets/images/icon-upload.svg" alt="Image of a cloud to indicate uploading"/>
+          <p id="upload-hint">Drag and drop or click to upload</p>
+        </section>
+        <section class="info-text">
+          <img src="./assets/images/icon-info.svg" alt="Info icon"/>
+          <p>Upload your photo (JPG or PNG, max size: 500KB).</p>
+        </section>
       </section>
     
       <section class="full-name">
-        <label for="fullname">Full Name</label>
-        <input type="text" name="fullname" id="full-name" class="input" required/>
+        <label for="full-name">Full Name</label>
+        <input type="text" name="fullname" id="full-name" class="input brd-rad" required/>
       </section>
     
       <section class="email-address">
-        <label for="email">Email Address</label>
-        <input type="email" name="email" id="email-address" class="input" placeholder="example@email.com" required/>
+        <label for="email-address">Email Address</label>
+        <input type="email" name="email" id="email-address" class="input brd-rad" placeholder="example@email.com" autocomplete="email" required/>
       </section>
     
       <section class="github-user">
-        <label for="github-username">GitHub Username</label>
-        <input type="text" name="github-username" id="gh-user" class="input" placeholder="@yourusername" required/>
+        <label for="gh-user">GitHub Username</label>
+        <input type="text" name="github-username" id="gh-user" class="input brd-rad" placeholder="@yourusername" required/>
       </section>
     
-      <button class="generate-ticket btn">Generate My Ticket</button>
+      <button type="submit" class="btn brd-rad" id="generate-ticket">Generate My Ticket</button>
     </form>
   
     <!-- Form ends -->

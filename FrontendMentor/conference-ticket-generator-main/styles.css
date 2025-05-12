@@ -1,6 +1,5 @@
-/* For defining variables */
+/* Variable Definitions */
 :root {
-/* Colors */
     --neutral0: hsl(0, 0%, 100%);
     --neutral300: hsl(252, 6%, 83%);
     --neutral500: hsl(245, 15%, 58%);
@@ -10,16 +9,16 @@
     --orange700: hsl(7, 71%, 60%);
     --textgradient-start: hsl(7, 86%, 67%);
     --textgradient-end: hsl(0, 0%, 100%);
+    --inputbg: rgba(255, 255, 255, 7%)
 }
 
-/* Defining fonts */
+/* Font Definition */
 @font-face {
     font-family: "Inconsolata";
     src: url('./assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf') format('woff2-variations');
     font-style: normal;
     font-weight: 200 800;
 }
-
 
 *,
 *::before,
@@ -32,59 +31,131 @@ body {
     margin: 0;
     background-image: url('./assets/images/background-desktop.png');
     color: var(--neutral0);
+    width: 100%;
+    min-height: 100%;
 }
 
+/* 
+Gradient is applied via the background property, with a linear-gradient function
+You specify what the gradient is applied on with the background-clip property
+And you make the text color transparent to let the gradient show
+ */
 .gradient {
-    color: linear-gradient(var(--textgradient-start), var(--textgradient-end));
+    background: linear-gradient(to bottom right, var(--textgradient-start), var(--textgradient-end));
+    background-clip: text;
+    color: transparent;
 }
 
 /* Container for entire form including header */
 .conf-form {
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 8rem;
 }
 
-.conf-form h1 {
-
+.conf-form > * + * {
+    margin-top: 1rem;
 }
 
-.conf-form p {
-
+.conf-form label {
+    font-size: 20px;
+    display: block;
+    margin-bottom: 10px;
 }
 
-/* Container for 'Upload Avatar' */
-.upload-avatar {
-
+#event-name {
+    display: block;
+    margin: auto;
+    margin-top: 2rem;
+    /* 
+    Easier way to "resize" an image without
+    manipulating width & height 
+    */
+    transform: scale(0.7);
 }
 
-.upload-avatar input {
-
+.header {
+    text-align: center;
+    max-width: 35%;
 }
 
-.upload-avatar p {
-
+.main-header {
+    font-size: 36px;
 }
 
-/* Container for Full Name */
-.full-name {
-
+.sub-header {
+    color: var(--neutral300);
+    font-size: 16px;
 }
 
-/* Container for Email Address */
-.email-address {
 
+.drop-zone {
+    border: 1px dashed var(--neutral500);
+    background-color: var(--inputbg);
+    border-radius: 10px;
 }
 
-/* Container for GitHub Username */
-.github-user {
+.drop-zone > * {
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-top: 1rem;
+}
 
+.drop-zone > :first-child {
+    border: 1px solid var(--neutral500);
+    background-color: var(--neutral700);
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.drop-zone > :last-child {
+    margin-bottom: 1rem;
+    color: var(--neutral300);
+}
+
+.info-text {
+    display: flex;
+    gap: 10px;
+    color: var(--neutral500);
+}
+
+.info-text p {
+    font-size: 10px;
+}
+
+.conf-form > section {
+    min-width: 25%;
+}
+
+.input {
+    width: 100%;
+    min-height: 2.5rem;
+    padding: 1em;
+    background-color: var(--inputbg);
+    border: 1px solid var(--neutral500);
+    color: var(--neutral0);
 }
 
 .btn {
+    min-width: 25%;
+    min-height: 2.5rem;
+    background-color: var(--orange500);
+    font-family: "Inconsolata", sans-serif;
+    font-weight: 800;
+    transition: all ease-in-out 300ms;
+    font-size: 16px;
+}
 
+.brd-rad {
+    border-radius: 10px;
 }
 
 .btn:hover {
-    
+    background-color: var(--orange700);
+    transform: translateY(-1px);
 }
 
 .attribution {
