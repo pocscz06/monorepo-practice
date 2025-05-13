@@ -16,9 +16,15 @@
   </style>
 </head>
 <body>
+  <img src="./assets/images/pattern-lines.svg" alt="Pattern lines over the background image" class="bg-image" id="pattern-lines"/>
+  <img src="./assets/images/pattern-squiggly-line-bottom-desktop.svg" alt="Squiggly line pattern" class="bg-image" id="squiggly-bottom"/>
+  <img src="./assets/images/pattern-squiggly-line-top.svg" alt="Squiggly line pattern" class="bg-image" id="squiggly-top"/>
+  <img src="./assets/images/pattern-circle.svg" alt="Circle pattern" class="bg-image" id="circle"/>
 
   <main>
-    <img src="./assets/images/logo-full.svg" id="event-name" alt="Logo with event name--coding conf"/>
+    <section class="event-name-container">
+      <img src="./assets/images/logo-full.svg" id="event-name" alt="Logo with event name--coding conf"/>
+    </section>
     <!-- Form starts -->
     <form class="conf-form">
       <section class="header">
@@ -30,7 +36,7 @@
       <section class="upload-avatar">
         <label for="upload">Upload Avatar</label>
 
-        <input type="file" id="upload" style="display: none" required/>
+        <input type="file" name="upload" id="upload" style="display: none" required/>
         
         <section class="drop-zone">
           <img src="./assets/images/icon-upload.svg" alt="Image of a cloud to indicate uploading"/>
@@ -74,11 +80,10 @@
     </div>
   
     <!-- Generated tickets ends -->
-    
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-      Coded by <a href="#">Kenny Pham</a>.
-    </div>
   </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Kenny Pham</a>.
+  </div>
 </body>
 </html>

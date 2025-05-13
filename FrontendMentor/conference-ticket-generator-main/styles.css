@@ -31,8 +31,10 @@ body {
     margin: 0;
     background-image: url('./assets/images/background-desktop.png');
     color: var(--neutral0);
-    width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* 
@@ -65,15 +67,64 @@ And you make the text color transparent to let the gradient show
     margin-bottom: 10px;
 }
 
+/* 
+I want the #event-name element to be centered within the page;
+I can do so with display: block rather easily, but if I do that
+--the body wouldn't treat its margin-top as part of the body's
+"content." 
+
+Two ways I know of to remedy this:
+
+- text-align: center in body centers all inline and inline-block elements w/in main.
+Images are inline-block by default. I don't particularly like this idea as I'd have to override
+the text-alignment for other elements. In this case, it's just the labels--a pretty easy fix, but
+the idea itself seems pretty messy to me. I could create an "override" text-align class, but I don't
+think that's necessary. 
+
+- Wrap the image within a container and apply a text-align of center to it.
+*/
 #event-name {
-    display: block;
-    margin: auto;
     margin-top: 2rem;
     /* 
     Easier way to "resize" an image without
     manipulating width & height 
     */
     transform: scale(0.7);
+}
+
+.event-name-container {
+    text-align: center;
+    user-select: none;
+    pointer-events: none;
+}
+
+.bg-image {
+    z-index: -1;
+}
+
+#pattern-lines {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    opacity: 75%;
+}
+
+#squiggly-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+#squiggly-top {
+    position: fixed;
+    top: 3rem;
+    right: 0;
+}
+
+#circle {
+    position: fixed;
+    bottom: 12.5rem;
+    right: 23rem;
 }
 
 .header {
@@ -162,5 +213,5 @@ And you make the text color transparent to let the gradient show
     position: fixed;
     bottom: 0;
     width: 100%;
-    margin: 0 auto;
+    margin: auto;
 }
