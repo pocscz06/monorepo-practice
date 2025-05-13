@@ -36,11 +36,15 @@
       <section class="upload-avatar">
         <label for="upload">Upload Avatar</label>
 
-        <input type="file" name="upload" id="upload" style="display: none" required/>
+        <input type="file" accept="image/*" name="upload" id="upload" class="hide" required/>
         
         <section class="drop-zone">
-          <img src="./assets/images/icon-upload.svg" alt="Image of a cloud to indicate uploading"/>
+          <img src="./assets/images/icon-upload.svg" id="uploaded-avatar" alt="Image of a cloud to indicate upload" width="41.6px" height="41.6px"/>
           <p id="upload-hint">Drag and drop or click to upload</p>
+          <section class="hidden-btns hide">
+            <button class="drop-zone-btn" id="remove-btn">Remove image</button>
+            <button class="drop-zone-btn" id="change-btn">Change image</button>
+          </section>
         </section>
         <section class="info-text">
           <img src="./assets/images/icon-info.svg" alt="Info icon"/>
@@ -85,5 +89,7 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
     Coded by <a href="#">Kenny Pham</a>.
   </div>
+
+  <script src="form.js"></script>
 </body>
 </html>

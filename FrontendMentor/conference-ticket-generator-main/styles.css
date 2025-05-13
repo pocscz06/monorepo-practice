@@ -48,6 +48,10 @@ And you make the text color transparent to let the gradient show
     color: transparent;
 }
 
+.hide {
+    display: none !important;
+}
+
 /* Container for entire form including header */
 .conf-form {
     display: flex;
@@ -162,9 +166,31 @@ think that's necessary.
     padding: 5px;
 }
 
-.drop-zone > :last-child {
+.drop-zone > :nth-child(2) {
     margin-bottom: 1rem;
     color: var(--neutral300);
+}
+
+.drop-zone:hover {
+    background-color: var(--neutral700);
+    cursor: pointer;
+}
+
+.hidden-btns {
+    margin-bottom: 1rem;
+}
+
+.hidden-btns > * {
+    background-color: rgba(255, 255, 255, 12%);
+    border: none;
+    color: var(--neutral300);
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.hidden-btns > *:hover {
+    cursor: pointer;
+    background-color: var(--neutral500);
 }
 
 .info-text {
@@ -190,6 +216,11 @@ think that's necessary.
     color: var(--neutral0);
 }
 
+.input:hover {
+    background-color: var(--neutral700);
+    cursor: pointer;
+}
+
 .btn {
     min-width: 25%;
     min-height: 2.5rem;
@@ -200,13 +231,15 @@ think that's necessary.
     font-size: 16px;
 }
 
-.brd-rad {
-    border-radius: 10px;
-}
-
 .btn:hover {
     background-color: var(--orange700);
     transform: translateY(-1px);
+    cursor: pointer;
+}
+
+
+.brd-rad {
+    border-radius: 10px;
 }
 
 .attribution {
