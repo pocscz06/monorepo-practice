@@ -17,13 +17,26 @@ dropZone.addEventListener('click', (e) => {
 
 // Standard function notation to preserve 'this' context
 hiddenUploadAction.addEventListener('change', function(e) {
-    // Always access the first element, because only one upload permitted
-    const file = this.files[0];
-    
+    // Need to pass "this" into processFile since it
+    // won't preserve "this" context
+    processFile(this);
+});
+
+function processFile(input) {
+    let file;
+
+    // input.files conditional handles click and select from files event
+    if (input.files) {
+        file = input.files[0];
+    // else conditional handles drag and drop from OS event
+    } else {
+        file = input;
+    }
+
     if (file) {
         readFile(file);
     }
-});
+}
 
 // DOM Update when an image is uploaded
 function dropZoneUpdate() {
@@ -51,6 +64,20 @@ function readFile(file) {
     });
     reader.readAsDataURL(file);
 };
+
+// Define the "drop zone"
+dropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = "move";
+})
+
+dropZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    
+    if (e.dataTransfer.files) {
+        processFile(e.dataTransfer.files[0]);
+    }
+});
 
 function removeImage() {
     uploadPreview.setAttribute('src', previewIcon);
