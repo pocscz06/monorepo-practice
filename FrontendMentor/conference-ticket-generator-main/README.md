@@ -10,7 +10,7 @@ This is a solution to the [Conference ticket generator challenge on Frontend Men
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
+  - [Continued Goals](#continued-goals)
   - [Useful resources](#useful-resources)
 - [Author](#author)
 
@@ -68,7 +68,6 @@ I wanted to use this to practice proper application of most of what I've been le
 - Flexbox
 - Drag and Drop Web API
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
@@ -89,10 +88,6 @@ Throughout this process, I sifted through a ton of different resources through w
 - Improve on responsive design
   - Perhaps adopt mobile-first design approach
 - Hard focus on maintainable/scalable code
-
-### Continued development
-
-- 
 
 ### Useful resources
 
