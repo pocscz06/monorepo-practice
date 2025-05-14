@@ -104,6 +104,7 @@ think that's necessary.
 
 .bg-image {
     z-index: -1;
+    user-select: none;
 }
 
 #pattern-lines {
@@ -205,6 +206,7 @@ think that's necessary.
 
 .conf-form > section {
     min-width: 25%;
+    user-select: none;
 }
 
 .input {
