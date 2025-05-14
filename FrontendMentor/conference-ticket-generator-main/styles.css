@@ -59,6 +59,9 @@ And you make the text color transparent to let the gradient show
     align-items: center;
     margin-top: 1rem;
     margin-bottom: 8rem;
+    container-type: inline-size;
+    container-name: confForm;
+    /* shorthand = container: confForm / inline-size; */
 }
 
 .conf-form > * + * {
@@ -151,6 +154,8 @@ think that's necessary.
     border: 1px dashed var(--neutral500);
     background-color: var(--inputbg);
     border-radius: 10px;
+    padding: 1rem;
+    width: 100%;
 }
 
 .drop-zone > * {
@@ -249,4 +254,48 @@ think that's necessary.
     bottom: 0;
     width: 100%;
     margin: auto;
+}
+
+/* Container Query for Responsiveness */
+/* Gonna experiment with nesting here */
+@container confForm (max-width: 525px) {
+    .conf-form {
+
+        .header {
+            max-width: 100%;
+
+            .main-header {
+                font-size: 28px;
+            }
+
+            .sub-header {
+                margin: 2em;
+            }
+        }
+
+        > section {
+            min-width: 80%;
+        }
+
+        .btn {
+            min-width: 80%;
+        }
+    }
+}
+
+@container confForm (526px <= width <= 1050px) {
+    .conf-form {
+
+        .header {
+            max-width: 80%;
+        }
+
+        > section {
+            min-width: 40%;
+        }
+
+        .btn {
+            min-width: 40%;
+        }
+    }
 }
