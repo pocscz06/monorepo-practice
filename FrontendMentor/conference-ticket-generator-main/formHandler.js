@@ -3,6 +3,10 @@ const dropZone = document.querySelector(".drop-zone");
 const uploadPreview = document.querySelector("#uploaded-avatar");
 const hiddenBtns = document.querySelector('.hidden-btns');
 const uploadHint = document.querySelector('#upload-hint');
+const infoText = document.querySelector(".info-text p");
+
+const neutral0 = getComputedStyle(document.documentElement).getPropertyValue('--neutral0');
+const orange700 = getComputedStyle(document.documentElement).getPropertyValue('-orange700');
 
 const previewIcon = uploadPreview.src;
 // Need window's getComputedStyle function to fetch CSS styling
@@ -14,6 +18,12 @@ const previewPadding = window.getComputedStyle(uploadPreview).padding;
 dropZone.addEventListener('click', (e) => {
     hiddenUploadAction.click();
 });
+
+dropZone.addEventListener('keydown', (e) => {
+    if (e.key === " " || e.key === "Enter") {
+        hiddenUploadAction.click();
+    }
+})
 
 // Standard function notation to preserve 'this' context
 hiddenUploadAction.addEventListener('change', function(e) {
@@ -33,7 +43,19 @@ function processFile(input) {
         file = input;
     }
 
+    const fileSize = file.size;
+    const fileSizeInKB = fileSize * .001;
+
     if (file) {
+        if (fileSizeInKB > 500) {
+            infoText.innerText = "File too large. Please upload a photo under 500KB."
+            infoText.style.color = `var(--orange700)`;
+            return;
+        }
+        if (infoText.style.color === 'var(--orange700)') {
+            infoText.innerText = "Upload your photo (JPG or PNG, max size: 500KB).";
+            infoText.style.color = `var(--neutral0)`;
+        }
         readFile(file);
     }
 }
