@@ -26,6 +26,14 @@
     box-sizing: border-box;
 }
 
+/* 
+Means image cannot be bigger than the size of its container,
+giving "dynamic" images 
+*/
+img {
+    max-inline-size: 100%;
+}
+
 body {
     font-family: "Inconsolata", sans-serif;
     margin: 0;
@@ -205,6 +213,14 @@ think that's necessary.
     color: var(--neutral500);
 }
 
+.error {
+    color: var(--orange700);
+}
+
+.email {
+    color: var(--orange500);
+}
+
 .info-text p {
     font-size: 10px;
 }
@@ -247,6 +263,72 @@ think that's necessary.
 
 .brd-rad {
     border-radius: 10px;
+}
+
+/* Return Page styling */
+.return {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ticket {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background-image: url('./assets/images/pattern-ticket.svg');
+    background-size: 100% 100%;
+    width: 100%;
+    max-width: 500px;
+}
+
+.ticket-header img {
+    margin-bottom: 1.4rem;
+}
+
+.ticket-header-text {
+    display: inline-block;
+}
+
+.ticket-header-text h2 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.ticket-header-text p {
+    color: var(--neutral300);
+    margin-top: 10px;
+}
+
+.ticket-holder {
+    display: flex;
+    margin-top: 3rem;
+}
+
+.ticket-holder-info {
+    margin-top: 1em;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket-holder img:first-child {
+    border-radius: 10px;
+}
+
+.ticket-holder h3 {
+    margin: 0;
+    font-weight: 500;
+}
+
+#github span {
+    color: var(--neutral300);
+    padding-left: 5px;
+    margin-top: 5px;
+}
+
+#github {
+    margin-top: 5px;
+    display: flex;
 }
 
 .attribution {
