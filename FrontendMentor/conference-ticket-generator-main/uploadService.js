@@ -21,6 +21,7 @@ dropZone.addEventListener('click', (e) => {
 
 dropZone.addEventListener('keydown', (e) => {
     if (e.key === " " || e.key === "Enter") {
+        e.preventDefault();
         hiddenUploadAction.click();
     }
 })
