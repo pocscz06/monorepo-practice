@@ -6,7 +6,7 @@ const uploadHint = document.querySelector('#upload-hint');
 const infoText = document.querySelector(".info-text p");
 
 const neutral0 = getComputedStyle(document.documentElement).getPropertyValue('--neutral0');
-const orange700 = getComputedStyle(document.documentElement).getPropertyValue('-orange700');
+const orange700 = getComputedStyle(document.documentElement).getPropertyValue('--orange700');
 
 const previewIcon = uploadPreview.src;
 // Need window's getComputedStyle function to fetch CSS styling
@@ -108,6 +108,11 @@ function removeImage() {
 
     uploadHint.classList.remove('hide');
     hiddenBtns.classList.add('hide');
+
+    if (infoText.style.color === 'var(--orange700)') {
+        infoText.innerText = "Upload your photo (JPG or PNG, max size: 500KB).";
+        infoText.style.color = `var(--neutral0)`;
+    }
 };
 
 const removeBtn = document.querySelector('#remove-btn');

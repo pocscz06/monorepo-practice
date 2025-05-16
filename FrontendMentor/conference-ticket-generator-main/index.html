@@ -26,7 +26,7 @@
       <img src="./assets/images/logo-full.svg" id="event-name" alt="Logo with event name--coding conf"/>
     </section>
     <!-- Form starts -->
-    <form class="conf-form">
+    <form class="conf-form" novalidate>
       <section class="header">
         <h1 class="main-header">Your Journey to Coding Conf 2025 Starts Here!</h1>
       
@@ -36,51 +36,154 @@
       <section class="upload-avatar">
         <label for="upload">Upload Avatar</label>
 
-        <input type="file" accept="image/*" name="upload" id="upload" class="hide" required/>
+        <input 
+          type="file" 
+          accept="image/*" 
+          name="upload" 
+          id="upload" 
+          class="hide" 
+          required
+          />
         
         <section class="drop-zone" tabindex="0">
           <img src="./assets/images/icon-upload.svg" id="uploaded-avatar" alt="Image of a cloud to indicate upload" width="41.6px" height="41.6px"/>
           <p id="upload-hint">Drag and drop or click to upload</p>
           <section class="hidden-btns hide">
-            <button type="button" class="drop-zone-btn" id="remove-btn">Remove image</button>
-            <button type="button" class="drop-zone-btn" id="change-btn">Change image</button>
+            <button 
+              type="button" 
+              class="drop-zone-btn" 
+              id="remove-btn"
+            >
+              Remove image
+            </button>
+            <button 
+              type="button" 
+              class="drop-zone-btn" 
+              id="change-btn"
+            >
+              Change image
+            </button>
           </section>
         </section>
         <section class="info-text">
-          <img src="./assets/images/icon-info.svg" alt="Info icon"/>
+          <img 
+            src="./assets/images/icon-info.svg" 
+            alt="Info icon"
+          />
           <p>Upload your photo (JPG or PNG, max size: 500KB).</p>
         </section>
       </section>
     
       <section class="full-name">
         <label for="full-name">Full Name</label>
-        <input type="text" name="fullname" id="full-name" class="input brd-rad" required/>
+        <input 
+          type="text" 
+          name="fullname" 
+          id="full-name" 
+          class="input brd-rad" 
+          required
+        />
+        <section class="info-text hide error">
+          <img 
+            src="./assets/images/icon-info.svg" 
+            alt="Info icon"
+          />
+          <p>Please enter your full name.</p>
+        </section>
       </section>
     
       <section class="email-address">
         <label for="email-address">Email Address</label>
-        <input type="email" name="email" id="email-address" class="input brd-rad" placeholder="example@email.com" autocomplete="email" required/>
+        <input 
+          type="email" 
+          name="email" 
+          id="email-address" 
+          class="input brd-rad" 
+          placeholder="example@email.com" 
+          autocomplete="email"
+          required
+        />
+        <section class="info-text hide error">
+          <img 
+            src="./assets/images/icon-info.svg" 
+            alt="Info icon"
+          />
+          <p>Please enter a valid email address.</p>
+        </section>
       </section>
     
       <section class="github-user">
         <label for="gh-user">GitHub Username</label>
-        <input type="text" name="github-username" id="gh-user" class="input brd-rad" placeholder="@yourusername" required/>
+        <input 
+          type="text" 
+          name="github-username" 
+          id="gh-user" 
+          class="input brd-rad" 
+          placeholder="@yourusername" 
+          required
+        />
+        <section class="info-text hide error">
+          <img 
+            src="./assets/images/icon-info.svg" 
+            alt="Info icon"
+          />
+          <p>Please enter your GitHub @username.</p>
+        </section>
       </section>
     
-      <button type="submit" class="btn brd-rad" id="generate-ticket">Generate My Ticket</button>
+      <button 
+        type="submit" 
+        class="btn brd-rad" 
+        id="generate-ticket"
+      >
+        Generate My Ticket
+      </button>
     </form>
   
     <!-- Form ends -->
   
     <!-- Generated tickets starts -->
   
-    <div class="return" style="display: none">
-      Congrats, <!-- Full Name -->! Your ticket is ready.
+    <div class="return hide">
+      <section class="header">
+        <h1 class="main-header">Congrats, <span data-placeholder="name" class="gradient">Kenny Pham</span>! Your ticket is ready.</h>
+      
+        <p class="sub-header">We've emailed your ticket to <span data-placeholder="email" class="error">pocscz06@gmail.com</span> and will send updates in the run up to the event.</p>
+      </section>
     
-      We've emailed your ticket to <!-- Email Address --> and will send updates in the run up to the event.
-    
-      Coding Conf
-      Jan 31, 2025 / Austin, TX
+      <section class="ticket">
+        <div class="ticket-header">
+          <img 
+            src="./assets/images/logo-mark.svg" 
+            alt="Coding Conf logo"
+            width="29px"
+            height="29px"
+          />
+          <div class="ticket-header-text">
+            <h2>Coding Conf</h2>
+            <p>Jan 31, 2025 / Austin, TX</p>
+          </div>
+        </div>
+        <div class="ticket-holder">
+          <img 
+            data-placeholder="avatar-img" 
+            src="./assets/images/image-avatar.jpg" 
+            alt="Profile picture"
+            width="60px"
+            height="60px"
+          />
+          <div class="ticket-holder-info">
+            <h3 data-placeholder="name">Kenny Pham</h3>
+            <div id="github">
+              <img 
+                src="./assets/images/icon-github.svg" 
+                alt="GitHub icon"
+              />
+              <span data-placeholder="github">@pocscz06</span>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   
     <!-- Generated tickets ends -->
@@ -90,6 +193,7 @@
     Coded by <a href="#">Kenny Pham</a>.
   </div>
 
-  <script src="form.js"></script>
+  <script src="uploadService.js"></script>
+  <script src="formSubmission.js"></script>
 </body>
 </html>
