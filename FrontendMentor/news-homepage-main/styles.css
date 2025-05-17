@@ -110,6 +110,10 @@ Utilities for single-purpose classes
         }
     }
 
+    .featured__image {
+        margin: auto;
+    }
+
     .featured__btn {
         padding: 0.6rem 1.6rem;
         margin-left: 1rem;
@@ -155,6 +159,38 @@ Utilities for single-purpose classes
         }
     }
 
+    .feature-cards {
+        margin-bottom: 4rem;
+    }
+
+    .feature-card {
+        display: flex;
+        margin: 2rem 1rem;
+        margin-right: 0;
+    }
+
+    .feature-card__image {
+        width: 125px;
+        height: 150px;
+    }
+
+    .feature-card__contents {
+        margin-left: 1.5rem;
+
+        > * + * {
+            margin-top: 0.6rem;
+        }
+    }
+
+    .feature-card__description {
+        margin-bottom: 0;
+        line-height: 2.5ch;
+
+    }
+
+    @media (width > 730px) {
+        
+    }
 }
 
 @layer components {
@@ -201,7 +237,10 @@ Utilities for single-purpose classes
         letter-spacing: 4px;
         line-height: 3ch;
 
-        /* :hover styling */
+        &:hover {
+            background-color: var(--verydarkblue);
+            color: var(--offwhite);
+        }
     }
 
     .sidebar {
@@ -214,6 +253,10 @@ Utilities for single-purpose classes
 
     .sidebar__item-title {
         color: var(--offwhite);
+
+        &:hover {
+            color: var(--softorange);
+        }
     }
 
     .sidebar__item::after {
@@ -222,6 +265,24 @@ Utilities for single-purpose classes
 
     .sidebar__item-description {
         color: var(--grayishblue);
+    }
+
+    .feature-card__number {
+        color: var(--softred);
+        font-size: 32px;
+    }
+
+    .feature-card__title {
+        font-weight: 800;
+        font-size: 16px;
+
+        &:hover {
+            color: var(--softred);
+        }
+    }
+
+    .feature-card__description {
+        color: var(--darkgrayishblue);
     }
 }
 
