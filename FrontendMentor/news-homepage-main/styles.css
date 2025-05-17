@@ -11,6 +11,7 @@ Utilities for single-purpose classes
     /* Variable Definitions */
     :root {
         max-inline-size: 100%;
+        interpolate-size: allow-keywords;
 
         /* Primary Colors */
         --softorange: hsl(35, 77%, 62%);
@@ -47,6 +48,10 @@ Utilities for single-purpose classes
         font-size: 15px;
     }
 
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+    }
+
     img {
         max-width: 100%;
         display: block;
@@ -56,12 +61,189 @@ Utilities for single-purpose classes
 
 @layer layout {
 
+    .header {
+        display: flex;
+        margin: 1rem;
+    }
+
+    .header__nav {
+        margin-left: auto;
+        align-self: center;
+    }
+
+    .header__nav-list {
+        list-style: none;
+        position: fixed;
+        background: white;
+        margin: 0;
+        padding: 1rem;
+        width: 60%;
+        height: 100dvh;
+        visibility: visible;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        transition:
+            all 0.5s ease,
+            visiblity 0s;
+
+        #dropdown-close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 1.5rem;
+        }
+
+        & > * + * {
+            margin-top: 1.5rem;
+        }
+
+        li:first-of-type {
+            margin-top: 10rem;
+        }
+    }
+
+    .featured {
+        
+        > * {
+            padding: 0 1rem;
+        }
+    }
+
+    .featured__btn {
+        padding: 0.6rem 1.6rem;
+        margin-left: 1rem;
+    }
+
+    .sidebar {
+        margin: 4rem 1rem;
+
+        > * {
+            padding: 0rem 1.5rem;
+        }
+    }
+
+    .sidebar__title {
+        font-size: 28px;
+        margin: 2rem 0;
+        padding-top: 1.5rem;
+    }
+
+    .sidebar__item {
+
+        &:not(:last-child)::after {
+            content: '';
+            display: block;
+            margin: 2rem 0;
+            padding: 1px;
+        }
+
+        &:last-child {
+            padding-bottom: 2rem;
+        }
+    }
+
+
+    .sidebar__item-description {
+        line-height: 3ch;
+
+        &:not(:last-child)::after {
+            content: '';
+            display: block;
+            margin: 2rem 0;
+            padding: 1px;
+        }
+    }
+
 }
 
 @layer components {
 
+    .header__nav-link {
+        text-decoration: none;
+        color: black;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .overlay {
+        background: var(--verydarkblue);
+        opacity: 50%;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        transition:
+            all 0.1s ease,
+            visiblity 0s;
+
+    }
+
+    .featured__title {
+        margin-top: 1.5rem;
+        font-weight: 800;
+        font-size: 44px;
+        line-height: 1.5ch;
+    }
+
+    .featured__description {
+        color: var(--darkgrayishblue);
+        line-height: 2.5ch;
+    }
+
+    .featured__btn {
+        border: none;
+        background: var(--softred);
+        text-transform: uppercase;
+        font-weight: 800;
+        letter-spacing: 4px;
+        line-height: 3ch;
+
+        /* :hover styling */
+    }
+
+    .sidebar {
+        background: var(--verydarkblue);
+    }
+
+    .sidebar__title {
+        color: var(--softorange);
+    }
+
+    .sidebar__item-title {
+        color: var(--offwhite);
+    }
+
+    .sidebar__item::after {
+        background-color: var(--darkgrayishblue);
+    }
+
+    .sidebar__item-description {
+        color: var(--grayishblue);
+    }
 }
 
 @layer utilities {
+
+    .nav-hidden {
+        width: 0;
+        padding: 0;
+        visibility: hidden;
+        /* 
+        "all" includes padding in the transition 
+        since otherwise the element "stalls" at
+        ~1rem of width 
+        */
+        transition:
+            all 0.5s ease,
+            visibility 0.5s;
+    }
     
+    .overlay-hidden {
+        visibility: hidden;
+        width: 0;
+    }
+
 }
