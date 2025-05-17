@@ -19,22 +19,74 @@
 
   <!-- Use flexbox for header -->
   <header class="header">
-    <img class="header__logo" src="./assets/images/logo.svg" alt="Site logo"/>
+    <img 
+      class="header__logo" 
+      src="./assets/images/logo.svg" 
+      alt="Site logo"
+      width="45"
+      height="30"
+    />
     <nav class="header__nav">
-      <ul class="header__nav-list">
-        <li class="header__nav-item"><a class="header__nav-link" href="#">Home</a></li>
-        <li class="header__nav-item"><a class="header__nav-link" href="#">New</a></li>
-        <li class="header__nav-item"><a class="header__nav-link" href="#">Popular</a></li>
-        <li class="header__nav-item"><a class="header__nav-link" href="#">Trending</a></li>
-        <li class="header__nav-item"><a class="header__nav-link" href="#">Categories</a></li>
+      <img 
+        src="./assets/images/icon-menu.svg" 
+        alt="Drop-down menu icon" 
+        id="dropdown"
+      />
+      <ul class="header__nav-list nav-hidden">
+        <img 
+          src="./assets/images/icon-menu-close.svg" 
+          alt="Close drop-down menu icon" 
+          id="dropdown-close"
+        />
+        <li class="header__nav-item">
+          <a 
+            class="header__nav-link" 
+            href="#"
+          >Home
+          </a>
+        </li>
+        <li class="header__nav-item">
+          <a 
+            class="header__nav-link" 
+            href="#"
+          >New
+          </a>
+        </li>
+        <li class="header__nav-item">
+          <a 
+            class="header__nav-link" 
+            href="#"
+          >Popular
+          </a>
+        </li>
+        <li class="header__nav-item">
+          <a 
+            class="header__nav-link" 
+            href="#"
+          >Trending
+          </a>
+        </li>
+        <li class="header__nav-item">
+          <a 
+            class="header__nav-link" 
+            href="#"
+          >Categories
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
 
+  <div class="overlay overlay-hidden"></div>
+
   <!-- Use grid for main content layout -->
   <main>
     <article class="featured">
-      <img class="featured__image" src="./assets/images/image-web-3-mobile.jpg" alt="An image depicting different puzzles"/>
+      <img 
+        class="featured__image" 
+        src="./assets/images/image-web-3-mobile.jpg" 
+        alt="An image depicting different puzzles"
+      />
       <h2 class="featured__title">The Bright Future of Web 3.0?</h2>
     
       <p class="featured__description">
@@ -89,5 +141,7 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Kenny Pham</a>.
   </div>
+  
+  <script src="script.js"></script>
 </body>
 </html>
