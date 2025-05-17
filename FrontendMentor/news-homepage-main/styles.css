@@ -1,0 +1,67 @@
+@layer initialization, layout, components, utilities;
+/* 
+Initialization for defining variables and initial CSS reset
+Layout for grid/flexbox & responsiveness
+Components for component-specific styling
+Utilities for single-purpose classes
+*/
+
+@layer initialization {
+
+    /* Variable Definitions */
+    :root {
+        max-inline-size: 100%;
+
+        /* Primary Colors */
+        --softorange: hsl(35, 77%, 62%);
+        --softred: hsl(5, 85%, 63%);
+
+        /* Neutral Colors */
+        --offwhite: hsl(36, 100%, 99%);
+        --grayishblue: hsl(233, 8%, 79%);
+        --darkgrayishblue: hsl(236, 13%, 42%);
+        --verydarkblue: hsl(240, 100%, 5%);
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        src: url(./assets/fonts/Inter-VariableFont_slnt\,wght.ttf) format('woff2-variations');
+        font-style: normal;
+        font-weight: 400 800;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+
+}
+
+@layer layout {
+
+}
+
+@layer components {
+
+}
+
+@layer utilities {
+    
+}

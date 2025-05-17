@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css"/>
   
   <title>Frontend Mentor | News homepage</title>
 
@@ -16,45 +17,77 @@
 </head>
 <body>
 
-  Home
-  New
-  Popular
-  Trending
-  Categories
+  <!-- Use flexbox for header -->
+  <header class="header">
+    <img class="header__logo" src="./assets/images/logo.svg" alt="Site logo"/>
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li class="header__nav-item"><a class="header__nav-link" href="#">Home</a></li>
+        <li class="header__nav-item"><a class="header__nav-link" href="#">New</a></li>
+        <li class="header__nav-item"><a class="header__nav-link" href="#">Popular</a></li>
+        <li class="header__nav-item"><a class="header__nav-link" href="#">Trending</a></li>
+        <li class="header__nav-item"><a class="header__nav-link" href="#">Categories</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  The Bright Future of Web 3.0?
-
-  We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
-  But is it really fulfilling its promise?
-
-  Read more
-
-  New 
-
-  Hydrogen VS Electric Cars
-  Will hydrogen-fueled cars ever catch up to EVs?
-
-  The Downsides of AI Artistry
-  What are the possible adverse effects of on-demand AI image generation?
-
-  Is VC Funding Drying Up?
-  Private funding by VC firms is down 50% YOY. We take a look at what that means.
-
-  01
-  Reviving Retro PCs
-  What happens when old PCs are given modern upgrades?
-
-  02
-  Top 10 Laptops of 2022
-  Our best picks for various needs and budgets.
-
-  03
-  The Growth of Gaming
-  How the pandemic has sparked fresh opportunities.
+  <!-- Use grid for main content layout -->
+  <main>
+    <article class="featured">
+      <img class="featured__image" src="./assets/images/image-web-3-mobile.jpg" alt="An image depicting different puzzles"/>
+      <h2 class="featured__title">The Bright Future of Web 3.0?</h2>
+    
+      <p class="featured__description">
+        We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+        But is it really fulfilling its promise?
+      </p>
+    
+      <button class="featured__btn">Read more</button>
+    </article>
+  
+    <aside class="sidebar">
+      <h2 class="sidebar__title">New</h2> 
+    
+      <section class="sidebar__item">
+        <h3 class="sidebar__item-title">Hydrogen VS Electric Cars</h3>
+        <p class="sidebar__item-description">Will hydrogen-fueled cars ever catch up to EVs?</p>
+      </section>
+    
+      <section class="sidebar__item">
+        <h3 class="sidebar__item-title">The Downsides of AI Artistry</h3>
+        <p class="sidebar__item-description">What are the possible adverse effects of on-demand AI image generation?</p>
+      </section>
+    
+      <section class="sidebar__item">
+        <h3 class="sidebar__item-title">Is VC Funding Drying Up?</h3>
+        <p class="sidebar__item-description">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+      </section>
+    </aside>
+  
+    <section class="feature-cards">
+      <div class=feature-card>
+        <h2 class="feature-card__number">01</h2>
+        <h4 class="feature-card__title">Reviving Retro PCs</h4>
+        <p class="feature-card__description">What happens when old PCs are given modern upgrades?</p>
+      </div>
+    
+      <div class="feature-card">
+        <h2 class="feature-card__number">02</h2>
+        <h4 class="feature-card__title">Top 10 Laptops of 2022</h4>
+        <p class="feature-card__description">Our best picks for various needs and budgets.</p>
+      </div>
+    
+      <div class="feature-card">
+        <h2 class="feature-card__number">03</h2>
+        <h4 class=feature-card__title>The Growth of Gaming</h4>
+        <p class="feature-card__description">How the pandemic has sparked fresh opportunities.</p>
+      </div>
+    </section>
+  </main>
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Kenny Pham</a>.
   </div>
 </body>
 </html>
