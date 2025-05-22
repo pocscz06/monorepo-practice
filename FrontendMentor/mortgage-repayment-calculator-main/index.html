@@ -17,42 +17,109 @@
 </head>
 <body>
 
-  Mortgage Calculator
-  Clear All
+  <main>
+    <header class="header">
+      <h1 class="header__title">Mortgage Calculator</h1>
+    </header>
 
-  Mortgage Amount
+    <form class="form">
+      <button class="form__btn--reset" type="reset">Clear All</button>
+  
+      <div class="form__field">
+        <label class="form__label" for="mortgage-amount">Mortgage Amount</label>
+        <input class="form__input form__input--amount" 
+          id="mortgage-amount"
+          type="text"
+          name="amount-input"
+          inputmode="numeric" 
+          pattern="[0-9,]+"
+          required
+        />
+      </div>
+    
+      <div class="form__field">
+        <label class="form__label" for="mortgage-term">Mortgage Term</label>
+        <input class="form__input form__input--term"
+          id="mortgage-term"
+          type="number"
+          name="term-input"
+          min="5"
+          max="40"
+          required
+        />
+      </div>
+    
+      <div class="form__field">
+        <label class="form__label" for="interest-rate">Interest Rate</label>
+        <input class="form__input form__input--rate"
+          id="interest-rate"
+          type="text"
+          name="rate-input"
+          inputmode="numeric"
+          pattern="[0-9,.]+"
+          required
+        />
+      </div>
+    
+      <div class="form__field" role="radiogroup" aria-labelledby="mortgage-type-label">
+        <label class="form__label" id="mortgage-type-label">Mortgage Type</label>
 
-  Mortgage Term
-
-  Interest Rate
-
-  Mortgage Type
-  Repayment
-  Interest Only
-
-  Calculate Repayments
-
-  <!-- Empty results start -->
-
-  Results shown here
-
-  Complete the form and click “calculate repayments” to see what 
-  your monthly repayments would be.
-
-  <!-- Empty results end -->
-
-  <!-- Completed results start -->
-
-  Your results
-
-  Your results are shown below based on the information you provided. 
-  To adjust the results, edit the form and click “calculate repayments” again.
-
-  Your monthly repayments
-
-  Total you'll repay over the term
-
-  <!-- Completed results end -->
+        <input 
+          class="form__input--repayment" 
+          type="radio" 
+          name="mortgage-type" 
+          value="repayment"
+          id="repayment"
+        />
+        <label class="form__label--repayment" for="repayment">Repayment</label>
+  
+        <input 
+          class="form__input--interest" 
+          type="radio" 
+          name="mortgage-type" 
+          value="interest-only"
+          id="interest-only"
+        />
+        <label class="form__label--interest" for="interest-only">Interest Only</label>
+      </div>
+    
+      <button type="submit" class="form__btn--submit">Calculate Repayments</button>
+    </form>
+  
+    <section class="results" aria-live="polite">
+      <!-- Empty results start -->
+    
+      <div class="results__section results__section--empty">
+        <h2 class="results__title results__title--centered">Results shown here</h2>
+      
+        <p class="results__subtext results__subtext--centered">
+          Complete the form and click “calculate repayments” to see what 
+          your monthly repayments would be.
+        </p>
+      </div>
+    
+      <!-- Empty results end -->
+    
+      <!-- Completed results start -->
+    
+      <div class="results__section results__section--calculated hidden">
+        <h2 class="results__title results__title--top-left">Your results</h2>
+      
+        <p class="results__subtext results__subtext--top-left">
+          Your results are shown below based on the information you provided. 
+          To adjust the results, edit the form and click “calculate repayments” again.
+        </p>
+      
+        <div class="results__card">
+          <p class="results__monthly">Your monthly repayments</p>
+        
+          <p class="results__total">Total you'll repay over the term</p>
+        </div>
+      </div>
+    
+      <!-- Completed results end -->
+    </section>
+  </main>
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
