@@ -33,12 +33,12 @@ I start with a mobile-first approach, as it inherently allows you to "start simp
 
 So, I'll scan the provided mobile template a bit to get an idea of how to structure my HTML. I'll go from top-to-bottom in structuring my provided HTML, keeping in mind:
 
-- Semantic HTML for accessibility
+- Semantic HTML for accessibility & SEO
 - BEM Methodology for class naming 
   - Recently, I've been thinking that while I like what BEM provides when done right in terms of readability and addressing the cascade, I often spend a lot of time deliberating on whether or not my class names follow the strict BEM conventions. I mean a _lot_ of time. Often times once I'm done, I'll look through and feel like my class names aren't great, they don't properly follow BEM convention, and thus aren't properly taking advantage of BEM's strengths, _and_ they take me a lot of time for little merit.
   - And so, I've been hearing about [CUBE CSS](https://cube.fyi/), which is a relatively newer class-naming methodology. It seems like people who had issues with certain aspects of BEM tend to like CUBE as an alternative. I intend on looking into this. I want to learn a class-naming methodology that doesn't constrain me too much to the point that I spend hours trying to figure out the best way to name my classes. A main point of these CSS methodologies is that they're supposed to be easily understood by someone who may or may not be practiced in that methodology. Thus, I don't think it important which particular one I follow.
-  - Proper containers for ease of layout styling
-  - Overall accessibility (ARIA) when semantic HTML is not an option for a certain design
+- Proper containers for ease of layout styling
+- Overall accessibility (ARIA) when semantic HTML is not an option for a certain design
 
 Afterwards, I work through my stylesheet with the @layer directive. This time I've removed the 'component' layer I've had in previous stylesheets, as I'd end up having to "reuse" the same classes--separated by layout styling and component styling. I start with my "init" layer, where I handle my CSS reset + initialization of custom variables and variable fonts. I experimented with using the clamp() function for responsive typography and the :has() pseudo-class (almost kind of like a CSS conditional) to create a custom design for my radio inputs.
 
