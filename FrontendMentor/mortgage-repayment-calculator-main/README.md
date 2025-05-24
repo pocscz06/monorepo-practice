@@ -45,20 +45,22 @@ Afterwards, I work through my stylesheet with the @layer directive. This time I'
 I'll save the responsiveness across different devices implementation for after I implement the necessary JS logic. My focus is on creating a fully-functional page on mobile first, and then concerning myself with responsiveness once I've ensured everything works. Speaking of responsiveness, I'll experiment with ensuring compatibility across different browsers as well. I recently found a plugin called [Autoprefixer](https://www.npmjs.com/package/autoprefixer) that parses your CSS and adds vendor prefixes as needed using values from [Can I Use](https://caniuse.com/). I'll spend some time reading up on vendor prefixes myself to get an idea of how developers may have needed to handle compatibility in the past. Perhaps it'll help if I ever need to maintain/read an older codebase's stylesheets.
 
 In regards to the JS script, I want to emphasize "clean, maintainable, and scalable" code. To facilitate this, I focused on these things while writing my JavaScript:
-    - Single function, single purpose
-        - Each function should serve one purpose--otherwise it can lead to a bloated mess that's hard to read. Others (including myself in the future) should be able to just glimpse at the function name to get an idea of what it does.
-    - JSDoc Comments
-        - This is moreso just to familiarize myself with the practice of writing them and the different tags in JSDoc. I'm aware that **not every function should have comments**. They should only _require_ documented comments when the purpose of a function isn't clear at a glimpse.
-    - Avoiding the declaration of global variables
-        - I tend to do this a lot, so I'm trying to avoid it now as part of my efforts to practice clean, maintainable, and scalable code. To my knowledge, global vars can lead to difficulties with debugging as it can cause "scope pollution." With local scoping, it should be easier to identify an issue when one arises.
-        - Also, I'm sure global variables can lead to memory issues since they exist for the duration of an application's lifetime. What memory issues exactly--I'm not too sure at the moment, but I will look into it.
+
+- Single function, single purpose
+  - Each function should serve one purpose--otherwise it can lead to a bloated mess that's hard to read. Others (including myself in the future) should be able to just glimpse at the function name to get an idea of what it does.
+- JSDoc Comments
+  - This is moreso just to familiarize myself with the practice of writing them and the different tags in JSDoc. I'm aware that **not every function should have comments**. They should only _require_ documented comments when the purpose of a function isn't clear at a glimpse.
+  - Avoiding the declaration of global variables
+    - I tend to do this a lot, so I'm trying to avoid it now as part of my efforts to practice clean, maintainable, and scalable code. To my knowledge, global vars can lead to difficulties with debugging as it can cause "scope pollution." With local scoping, it should be easier to identify an issue when one arises.
+    - Also, I'm sure global variables can lead to memory issues since they exist for the duration of an application's lifetime. What memory issues exactly--I'm not too sure at the moment, but I will look into it.
     
 Once everything is said and done, I complete my JS and responsive design implementations, I'll test to ensure everything works as intended (and is performant). 
-    - I'll do a standard test to ensure basic functionality is working.
-    - I'll test that everything works properly for keyboard-only users.
-        - I'll _try_ to test with [NVDA](https://www.nvaccess.org/) to ensure my site is navigable without sight!!! Screen readers are notoriously difficult to use for those unfamiliar with them, so the best I can do is try.
-    - I'll use [WAVE](https://wave.webaim.org/)--the web accessibility evaluation tool to check for any errors/alerts in terms of A11y/ARIA guidelines.
-    - I'll also use Chrome DevTool's Lighthouse report to diagnose and fix any issues affecting performance, accessibility, and SEO. This is definitely "overkill" for the purposes of a small FEM project, but this is all just for familiarizing myself with the processes.
+
+- I'll do a standard test to ensure basic functionality is working.
+- I'll test that everything works properly for keyboard-only users.
+  - I'll _try_ to test with [NVDA](https://www.nvaccess.org/) to ensure my site is navigable without sight!!! Screen readers are notoriously difficult to use for those unfamiliar with them, so the best I can do is try.
+  - I'll use [WAVE](https://wave.webaim.org/)--the web accessibility evaluation tool to check for any errors/alerts in terms of A11y/ARIA guidelines.
+- I'll also use Chrome DevTool's Lighthouse report to diagnose and fix any issues affecting performance, accessibility, and SEO. This is definitely "overkill" for the purposes of a small FEM project, but this is all just for familiarizing myself with the processes.
 
 
 ### What I learned
