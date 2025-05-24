@@ -50,9 +50,9 @@ In regards to the JS script, I want to emphasize "clean, maintainable, and scala
   - Each function should serve one purpose--otherwise it can lead to a bloated mess that's hard to read. Others (including myself in the future) should be able to just glimpse at the function name to get an idea of what it does.
 - JSDoc Comments
   - This is moreso just to familiarize myself with the practice of writing them and the different tags in JSDoc. I'm aware that **not every function should have comments**. They should only _require_ documented comments when the purpose of a function isn't clear at a glimpse.
-  - Avoiding the declaration of global variables
-    - I tend to do this a lot, so I'm trying to avoid it now as part of my efforts to practice clean, maintainable, and scalable code. To my knowledge, global vars can lead to difficulties with debugging as it can cause "scope pollution." With local scoping, it should be easier to identify an issue when one arises.
-    - Also, I'm sure global variables can lead to memory issues since they exist for the duration of an application's lifetime. What memory issues exactly--I'm not too sure at the moment, but I will look into it.
+- Avoiding the declaration of global variables
+  - I tend to do this a lot, so I'm trying to avoid it now as part of my efforts to practice clean, maintainable, and scalable code. To my knowledge, global vars can lead to difficulties with debugging as it can cause "scope pollution." With local scoping, it should be easier to identify an issue when one arises.
+  - Also, I'm sure global variables can lead to memory issues since they exist for the duration of an application's lifetime. What memory issues exactly--I'm not too sure at the moment, but I will look into it.
     
 Once everything is said and done, I complete my JS and responsive design implementations, I'll test to ensure everything works as intended (and is performant). 
 
