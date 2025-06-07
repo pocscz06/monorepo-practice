@@ -126,10 +126,18 @@
           To adjust the results, edit the form and click “calculate repayments” again.
         </p>
       
-        <div class="results__card">
-          <p class="results__monthly">Your monthly repayments</p>
-        
-          <p class="results__total">Total you'll repay over the term</p>
+        <div class="results__card card">
+          <div>
+            <div class="card__monthly">
+              <p class="card__monthly-title">Your monthly repayments</p>
+              <p class="card__monthly-output" id="monthlyOutput"></p>
+            </div>
+          
+            <div class="card__total">
+              <p class="card__total-title">Total you'll repay over the term</p>
+              <p class="card__total-output" id="totalOutput"></p>
+            </div>
+          </div>
         </div>
       </div>
     
@@ -139,7 +147,7 @@
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Kenny Pham</a>.
   </div>
 
   <script src="./script.js"></script>
