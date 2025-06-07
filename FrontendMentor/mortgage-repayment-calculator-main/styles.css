@@ -110,10 +110,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            cursor: pointer;
 
             &::before {
                 content: url('./assets/images/icon-calculator.svg');
                 padding: 0.5rem;
+            }
+
+            &:hover {
+                opacity: 50%;
             }
         }
 
@@ -220,8 +225,8 @@
     }
 
     .results {
-        background: var(--clr-slate900);
-        color: var(--clr-slate100);
+        background: hsla(201, 56%, 16%, 0.959);
+        color: var(--clr-slate500);
         text-align: center;
         padding: 2rem 0;
 
@@ -231,9 +236,47 @@
             align-items: center;
         }
 
+        .results__section--calculated {
+            text-align: left;
+            margin-inline: 1rem;
+        }
+
+        .results__title-top-left {
+            color: var(--clr-slate100);
+        }
+
         .results__subtext {
-            color: var(--clr-slate300);
-            line-height: 2ch;
+            line-height: 2.3ch;
+        }
+
+        .results__card {
+            border-top: 4px solid;
+            border-top-color: var(--clr-lime);
+            border-radius: 10px;
+            background: var(--clr-slate900);
+
+            & > div {
+                padding: 0 1rem;
+
+                & > :last-child {
+                    border-top: 1px solid var(--clr-slate500);
+                }
+            }
+        }
+
+        #monthlyOutput {
+            color: var(--clr-lime);
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        #totalOutput {
+            color: var(--clr-white);
+            font-size: 1.5rem;
+            font-weight: 700;
+            padding-bottom: 1.5rem;
         }
     }
     
