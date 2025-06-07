@@ -150,6 +150,10 @@
             display: flex;
             border: 2px solid black;
             border-radius: 6px;
+
+            &:focus-within .symbol {
+                background-color: var(--clr-lime);
+            }
         }
 
         .symbol {
@@ -241,6 +245,10 @@
             margin-inline: 1rem;
         }
 
+        .results__title {
+            color: var(--clr-slate100);
+        }
+
         .results__title-top-left {
             color: var(--clr-slate100);
         }
@@ -285,5 +293,14 @@
 @layer utilities {
     .hidden {
         display: none;
+    }
+}
+
+@media (width >= 1220px) {
+    main {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
 }
