@@ -1,10 +1,4 @@
 /**
- * @todo Collect form data from mortgage amount, term, type, and interest rate
- * @todo Use data to calculate monthly repayments & total repayment
- * @todo Update DOM with calculations
- */
-
-/**
  * Collects form data to pass into other functions
  * @param {SubmitEvent} e - Submit event to prevent default
  * @returns {void}
@@ -18,12 +12,14 @@ function collectFormData(e) {
     const {amount, interestRate, mortgageTerm} = extractFormValues(formData);
     const {monthlyRate, numPayments} = convertFormValues(amount, interestRate, mortgageTerm);
     const monthlyPayment = monthlyPayCalc(amount, monthlyRate, numPayments);
+    const totalPayment = totalPayCalc(monthlyPayment, numPayments);
 
     // Call function to update DOM
+    updateDOM(monthlyPayment, totalPayment);
+    
 }
 
 document.querySelector('.form').addEventListener('submit', collectFormData);
-
 
 /**
  * Extracts values from formData, parses them into numbers, 
@@ -48,7 +44,7 @@ function extractFormValues(formData) {
  * @returns {Object} - Object containing monthlyRate and numPayments
  */
 function convertFormValues(amount, interestRate, mortgageTerm) {
-    const monthlyRate = interestRate / 12;
+    const monthlyRate = (interestRate / 100) / 12;
     const numPayments = mortgageTerm * 12;
 
     return {monthlyRate, numPayments};
@@ -62,8 +58,54 @@ function convertFormValues(amount, interestRate, mortgageTerm) {
  * @returns {number} monthlyPay - Monthly payment amount
  */
 function monthlyPayCalc(amount, monthlyRate, numPayments) {
+    if (monthlyRate === 0) {
+        return amount / numPayments;
+    }
+
     const accumulator = Math.pow((1 + monthlyRate), numPayments);
-    const monthlyPay = amount * accumulator / (accumulator - 1);
+    const monthlyPay = amount * (monthlyRate * accumulator) / (accumulator - 1);
 
     return monthlyPay;
+}
+
+/**
+ * 
+ * @param {number} monthlyPay 
+ * @param {number} numPayments 
+ * @returns {number} totalPay
+ */
+function totalPayCalc(monthlyPay, numPayments) {
+    const totalPay = monthlyPay * numPayments;
+
+    return totalPay;
+}
+
+/**
+ * Updates results section with calculated results
+ * @param {number} monthlyPay 
+ * @param {number} totalPay 
+ * @returns {void}
+ */
+function updateDOM(monthlyPay, totalPay) {
+    const monthlyOutput = document.querySelector('#monthlyOutput');
+    const totalOutput = document.querySelector('#totalOutput');
+
+    monthlyOutput.innerHTML = `&pound;${monthlyPay.toLocaleString('en-GB', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+    })}`;
+    totalOutput.innerHTML = `&pound;${totalPay.toLocaleString('en-GB', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+    })}`;
+
+    toggleHide();
+}
+
+function toggleHide() {
+    const emptySection = document.querySelector('.results__section--empty');
+    const calcSection = document.querySelector('.results__section--calculated');
+
+    emptySection.classList.toggle('hidden');
+    calcSection.classList.toggle('hidden');
 }
